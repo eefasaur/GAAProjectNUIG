@@ -13,8 +13,6 @@ namespace GAAFullStackProject
         static void Main(string[] args)
         {
 
-
-
             //new instance of the methods class
                 DBmethods dbm = new DBmethods();
             
@@ -125,53 +123,14 @@ namespace GAAFullStackProject
                         break;
 
                     case 5://calulate stats
-                        string stat, calc;
-                        Console.Write("What column would you like to calculate?\n1. Age\n2. Height\n3. Running Distance\n4. Max Speed\nEnter number: ");
-                        int col = Convert.ToInt32(Console.ReadLine());
+                        //CalculateStats cs = new CalculateStats();
+                        //Console.Write("What column would you like to calculate?\n1. Age\n2. Height\n3. Running Distance\n4. Max Speed\nEnter number: ");
+                        //int col = Convert.ToInt32(Console.ReadLine());
 
-                        if (col == 1)
-                        {
-                            stat = "Age";
-                            //dbm.returnCalculation(connection, reader, "Age");
-                            //Console.Write(dbm.returnCalculation(connection, reader, "Age"));
+                        //List<double> output = dbm.arrayTest(connection, reader);
 
-                        }
-                        else if (col == 2)
-                        {
-                            stat = "Height";
-                            //dbm.returnCalculation(connection, reader, "Height");
-                            //Console.Write(dbm.returnArray(connection, reader, "Height").ToList());
-                        }
-                        else if (col == 3)
-                        {
-                            stat = "RunningDistance";
-                            //dbm.returnCalculation(connection, reader, "RunningDistance");
-                            //Console.Write(dbm.returnArray(connection, reader, "RunningDistance").ToList());
-                        }
-                        else //(stat == 1.4)
-                        {
-                            stat = "MaxSpeed";
-                            //dbm.returnCalculation(connection, reader, "MaxSpeed");
-                            //Console.Write(dbm.returnArray(connection, reader, "MaxSpeed").ToList());
-                        }
+                        dbm.arrayTest(connection, reader);
 
-                        Console.Write("What would you like returned\n1. Max\n2. Min\n3. Mean\nEnter number: ");
-                        int type = Convert.ToInt32(Console.ReadLine());
-
-                        if (type == 1)
-                        {
-                            calc = "MAX";
-                        }
-                        else if (type == 2)
-                        {
-                            calc = "MIN";
-                        }
-                        else //(type ==3)
-                        {
-                            calc = "MEAN";
-                        }
-                            
-                        dbm.returnCalculation(connection, reader, stat, calc);
 
                         break;
 

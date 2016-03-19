@@ -10,7 +10,7 @@ using System.Data.SqlClient;
 
 namespace GAAFullStackProject
 {
-    class DBmethods
+    public class DBmethods
     {
 
     //insert player
@@ -285,6 +285,8 @@ namespace GAAFullStackProject
                 }
             }
         }
+        
+        
         //update speed
         internal void updateSpeed(SqlConnection connection, SqlDataReader reader, int player, double s)
         //pass in connection, reader, player id, age
@@ -325,37 +327,32 @@ namespace GAAFullStackProject
         }
 
 
-    
-        internal int returnCalculation(SqlConnection connection, SqlDataReader reader, string stat, string type)
-        //pass in connection and reader
+
+        //List<double>
+        internal void arrayTest(SqlConnection connection, SqlDataReader reader)
+        //pass in connection, reader, player id, age
         {
-            int result = 0;
+            //List<double> test = new List<double>(); ;
+
             try
             {
-                connection.Open();//open connection to db
+                connection.Open();
 
-                string statistic = stat;
-                string calculation = type;
-
-                string query = "SELECT @calc(@stat) FROM Player";
-
-                SqlCommand cmd = new SqlCommand(query, connection);
                 
-                cmd.Parameters.Add("@calc", SqlDbType.VarChar);
-                cmd.Parameters["@calc"].Value = calculation;
+                string query = @"SELECT Age FROM Player";
+                SqlCommand arrayTest = new SqlCommand(query, connection);
 
-                //cmd.Parameters.Add("@stat", SqlDbType.VarChar);
-                //cmd.Parameters["@stat"].Value = statistic;
-                
-                cmd.Parameters.AddWithValue("@stat", statistic);
+                reader = arrayTest.ExecuteReader();
+                while (reader.Read())
+                {
+                    //test.Add(reader.GetDouble(0));
+                    Console.WriteLine(reader[0]);
+                }
 
-                //reader = cmd.ExecuteScalar();
-
-                result = (int) cmd.ExecuteScalar();
+                //return test.ToList();
 
             }
             catch { }
-            
             finally//encompasses the code to fully close the connection
             {
                 if (reader != null)//if there is a reader that is open - close it
@@ -367,10 +364,9 @@ namespace GAAFullStackProject
                     connection.Close();
                 }
             }
-            return (int) result;
+
+            //return test;
         }
-
-
 
     }//end class
 }//end namespace
