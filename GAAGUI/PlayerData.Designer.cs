@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace GAAGUI {
+namespace GAAFormGui {
     
     
     /// <summary>
@@ -277,7 +277,7 @@ namespace GAAGUI {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class PlayerDataTable : global::System.Data.DataTable, global::System.Collections.IEnumerable {
+        public partial class PlayerDataTable : global::System.Data.TypedTableBase<PlayerRow> {
             
             private global::System.Data.DataColumn columnPlayerID;
             
@@ -428,12 +428,6 @@ namespace GAAGUI {
             public PlayerRow FindByPlayerID(int PlayerID) {
                 return ((PlayerRow)(this.Rows.Find(new object[] {
                             PlayerID})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public virtual global::System.Collections.IEnumerator GetEnumerator() {
-                return this.Rows.GetEnumerator();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -764,7 +758,7 @@ namespace GAAGUI {
         }
     }
 }
-namespace GAAGUI.PlayerDataTableAdapters {
+namespace GAAFormGui.PlayerDataTableAdapters {
     
     
     /// <summary>
@@ -944,7 +938,7 @@ SELECT PlayerID, Name, Age, Height, RunningDistance, MaxSpeed FROM Player WHERE 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::GAAGUI.Properties.Settings.Default.msdb2355ConnectionString;
+            this._connection.ConnectionString = global::GAAFormGui.Properties.Settings.Default.msdb2355ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

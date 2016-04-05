@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace GAAGUI
+namespace GAAFormGui
 {
     static class Program
     {

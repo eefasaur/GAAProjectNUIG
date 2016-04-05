@@ -4,7 +4,7 @@
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="msdb2355ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="msdb2355ConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.GAAGUI.Properties.Settings.GlobalReference.Default.msdb2355ConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="msdb2355ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="msdb2355ConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.GAAFormGui.Properties.Settings.GlobalReference.Default.msdb2355ConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PlayerTableAdapter" GeneratorDataComponentClassName="PlayerTableAdapter" Name="Player" UserDataComponentName="PlayerTableAdapter">
@@ -86,7 +86,7 @@ SELECT PlayerID, Name, Age, Height, RunningDistance, MaxSpeed FROM Player WHERE 
   <xs:element name="PlayerData" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="PlayerData" msprop:Generator_UserDSName="PlayerData">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Player" msprop:Generator_TableClassName="PlayerDataTable" msprop:Generator_TableVarName="tablePlayer" msprop:Generator_TablePropName="Player" msprop:Generator_RowDeletingName="PlayerRowDeleting" msprop:Generator_RowChangingName="PlayerRowChanging" msprop:Generator_RowEvHandlerName="PlayerRowChangeEventHandler" msprop:Generator_RowDeletedName="PlayerRowDeleted" msprop:Generator_UserTableName="Player" msprop:Generator_RowChangedName="PlayerRowChanged" msprop:Generator_RowEvArgName="PlayerRowChangeEvent" msprop:Generator_RowClassName="PlayerRow">
+        <xs:element name="Player" msprop:Generator_TableClassName="PlayerDataTable" msprop:Generator_TableVarName="tablePlayer" msprop:Generator_RowChangedName="PlayerRowChanged" msprop:Generator_TablePropName="Player" msprop:Generator_RowDeletingName="PlayerRowDeleting" msprop:Generator_RowChangingName="PlayerRowChanging" msprop:Generator_RowEvHandlerName="PlayerRowChangeEventHandler" msprop:Generator_RowDeletedName="PlayerRowDeleted" msprop:Generator_RowClassName="PlayerRow" msprop:Generator_UserTableName="Player" msprop:Generator_RowEvArgName="PlayerRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="PlayerID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnPlayerID" msprop:Generator_ColumnPropNameInRow="PlayerID" msprop:Generator_ColumnPropNameInTable="PlayerIDColumn" msprop:Generator_UserColumnName="PlayerID" type="xs:int" />
